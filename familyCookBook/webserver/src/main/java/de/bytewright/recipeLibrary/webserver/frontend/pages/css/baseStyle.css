@@ -1,0 +1,16 @@
+div.body {
+    width: 800px;
+    border: 1px solid black;
+    overflow: hidden; /* add this to contain floated children */
+}
+
+div.menu {
+    width: 200px;
+    float: left;
+    border: 1px solid red;
+}
+
+div.content {
+    border: 1px solid green;
+    /*float: left;*/
+}

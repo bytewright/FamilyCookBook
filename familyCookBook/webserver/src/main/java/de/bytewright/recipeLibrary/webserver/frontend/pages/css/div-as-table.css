@@ -1,0 +1,29 @@
+
+div.table {
+    display: table;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+div.tr {
+    display: table-row;
+}
+
+div.td {
+    display: table-cell;
+    border: thin solid #162049;
+    padding: 5px;
+}
+
+div.th {
+    display: table-cell;
+    border: thin solid #162049;
+    text-align: center;
+    padding: 5px;
+}
+
+span.selectedContest {
+    font-weight: bold;
+}

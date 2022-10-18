@@ -1,0 +1,10 @@
+extend type Query {
+    "Get all relevant information for the current user"
+    users_findUserInformation: QueryUserInformationPayload!
+}
+
+"Query response for user information"
+type QueryUserInformationPayload {
+    information: UserInformation!
+}
+
