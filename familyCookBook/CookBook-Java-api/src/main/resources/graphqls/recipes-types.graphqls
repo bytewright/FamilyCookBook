@@ -1,0 +1,6 @@
+type Recipe {
+    "Username of the current user"
+    name: String!
+    "Creator of this recipe"
+    creator: UserInformation
+}

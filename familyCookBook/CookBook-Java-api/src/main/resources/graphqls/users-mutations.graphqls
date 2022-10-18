@@ -1,0 +1,45 @@
+extend type Mutation {
+    "Change the information of the current user"
+    users_updateInformation(input: UpdateUserInformationInput!): MutationUserInformationPayload!
+    users_create(input: CreateUserInput!): MutationUserInformationPayload!
+}
+
+"Input for create mutation"
+input CreateUserInput {
+    userName: String!
+    userPassword: String!
+    userEmail: String!
+    "omit to set to application defaults"
+    userSettings: UpdateUserSettingsInput
+}
+
+"Mutation response after updating user information"
+type MutationUserInformationPayload {
+    successful: Boolean!
+    information: UserInformation
+}
+
+"Input for mutations"
+input UpdateUserInformationInput {
+    userName: String
+    userPassword: String
+    userEmail: String
+    userSettings: UpdateUserSettingsInput
+}
+
+"""
+Input for updating the settings of the current user
+Empty values mean the app default is used
+"""
+input UpdateUserSettingsInput {
+    "ISO 639-1 code of the language the user prefers"
+    language: String
+    "Hour format for displaying (am/pm or 24hr)"
+    hourFormat: HourFormat
+    "Time format based on the Unicode Technical Standard #35"
+    timeFormat: String
+    "Date format based on the Unicode Technical Standard #35"
+    dateFormat: String
+    "Date and time format based on the Unicode Technical Standard #35"
+    dateTimeFormat: String
+}

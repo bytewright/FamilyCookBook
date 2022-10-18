@@ -1,0 +1,41 @@
+scalar BigDecimal
+"A scalar representing Java's `java.math.BigInteger`"
+scalar BigInteger
+"A scalar representing Java's `java.lang.Long`"
+scalar Long
+"A scalar representing Java's `java.lang.Short`"
+scalar Short
+"A scalar representing Java's `java.lang.Byte`"
+scalar Byte
+"A scalar representing a `URL`"
+scalar Url
+"A scalar representing an E-mail"
+scalar Email
+
+"The base [GraphQL](http://www.graphql.org) mutation type."
+type Mutation {
+    "A simple mutation. Only for testing purpose."
+    echo(message: String!): String!
+}
+
+"The base [GraphQL](http://www.graphql.org) query type."
+type Query {
+    "A simple query. Only for testing purpose."
+    version: String
+}
+
+"The paging information"
+input Paging {
+    "The page number"
+    offset: Int! = 0
+    "The number of entries per page"
+    limit: Int! = 100
+}
+
+"Representation of sort ordering"
+enum SortOrder {
+    "Ascending order"
+    ASC,
+    "Descending order"
+    DESC
+}

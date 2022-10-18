@@ -1,0 +1,33 @@
+enum HourFormat {
+    AMPM,
+    TWENTYFOUR
+}
+
+"Representation of all relevant user information"
+type UserInformation {
+    "Username of the current user"
+    name: String!
+    "Email of the current user"
+    email: String
+    "Settings the current user has set"
+    settings: UserSettings
+    "Roles the current user has"
+    groups: [String!]!
+}
+
+"""
+Representation of all user settings
+Empty values mean the app default is used
+"""
+type UserSettings {
+    "ISO 639-1 code of the language the user prefers"
+    language: String
+    "Hour format for displaying (am/pm or 24hr)"
+    hourFormat: HourFormat
+    "Time format based on the Unicode Technical Standard #35"
+    timeFormat: String
+    "Date format based on the Unicode Technical Standard #35"
+    dateFormat: String
+    "Date and time format based on the Unicode Technical Standard #35"
+    dateTimeFormat: String
+}
